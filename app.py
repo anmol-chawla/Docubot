@@ -19,7 +19,7 @@ slack_events_adapter = SlackEventAdapter(SLACK_SIGNING_SECRET, "/events", app)
 @slack_events_adapter.on('message')
 def message(event, req):
     # ignore retries
-    print(event)
+    print(event, flush=True)
     if req.headers.get('X-Slack-Retry-Reason'):
         print("Ignoring Retry")
         return "Status: OK"
@@ -29,7 +29,7 @@ def message(event, req):
 @slack_events_adapter.on("reaction_added")
 def reaction_added(event, req):
     # ignore retries
-    print(event)
+    print(event, flush=True)
     if req.headers.get('X-Slack-Retry-Reason'):
         print("Ignoring Retry")
         return "Status: OK"
