@@ -2,7 +2,6 @@ Flask
 notion
 slackclient
 python-dotenv
-pprint
 peewee
 bs4
 gunicorn
