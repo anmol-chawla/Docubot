@@ -128,6 +128,7 @@ class SlackEventAdapterException(Exception):
     """
     Base exception for all errors raised by the SlackClient library
     """
+
     def __init__(self, msg=None):
         if msg is None:
             # default error message
