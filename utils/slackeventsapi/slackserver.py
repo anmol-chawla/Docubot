@@ -114,7 +114,7 @@ class SlackServer(Flask):
 
                 listeners = self.emitter.listeners(event_type)
                 if listeners:
-                    argspec = inspect.getargspec(listeners[0])
+                    argspec = inspect.getfullargspec(listeners[0])
                     if len(argspec[0]) == 2:
                         event_args = [event_data, request]
 
